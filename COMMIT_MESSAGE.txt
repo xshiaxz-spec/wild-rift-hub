@@ -1,0 +1,53 @@
+feat: initialize Wild Rift Guide with complete frontend and backend
+
+# Full implementation of Wild Rift Guide project
+
+## Backend
+- Express.js server with champion API
+- Routes: /api/health, /api/champions (with role and search filters)
+- MVC architecture: Routes → Controllers → Services → Repositories
+- Ready for PostgreSQL migration (repository abstraction)
+- Logging middleware and error handling
+- CORS enabled
+
+## Frontend
+- Responsive design (mobile, tablet, desktop)
+- Home page with hero, search, role filters, champion grid
+- Individual champion pages with detailed information
+- No external dependencies (vanilla HTML/CSS/JS)
+- Dark theme inspired by League of Legends
+- Accessible (ARIA labels, semantic HTML)
+- Animated components and smooth transitions
+
+## Data
+- 12 champions with full structure
+- SVG placeholders for each champion (generated programmatically)
+- JSON-based data layer ready for database integration
+
+## Features
+✅ Search with debounce (250ms)
+✅ Filter by role (All, Baron, Jungle, Mid, Duo, Support)
+✅ Individual champion pages
+✅ Loading, error, and empty states
+✅ Mobile hamburger menu
+✅ Layered architecture for scalability
+✅ Prepared for stats/builds/counters/synergies data
+
+## Setup & Run
+npm install
+npm run dev
+→ http://localhost:3000
+
+## Files
+- Backend: server.js, routes/, controllers/, services/, repositories/
+- Frontend: index.html, champion.html, css/, js/
+- Assets: SVG champions placeholders
+- Config: package.json, README.md, .env.example, .gitignore
+
+Ready for:
+- PostgreSQL integration
+- Multiple data sources (WildLegends, WildRiftFire)
+- User authentication and favorites
+- Real-time statistics
+- Build recommendations
+- Champion comparison

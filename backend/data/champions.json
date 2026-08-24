@@ -1,0 +1,338 @@
+[
+  {
+    "id": 1,
+    "name": "Ahri",
+    "slug": "ahri",
+    "title": "A Raposa de Nove Caudas",
+    "roles": ["Mid"],
+    "tier": null,
+    "image": "/assets/images/champions/ahri.svg",
+    "stats": {
+      "winRate": null,
+      "pickRate": null,
+      "banRate": null
+    },
+    "build": {
+      "items": [],
+      "boots": [],
+      "runes": [],
+      "spells": []
+    },
+    "skillOrder": [],
+    "counters": [],
+    "strongAgainst": [],
+    "synergies": [],
+    "sources": [],
+    "patch": null,
+    "updatedAt": null,
+    "_note": "Dados demonstrativos. Estatísticas não refletem dados reais."
+  },
+  {
+    "id": 2,
+    "name": "Yasuo",
+    "slug": "yasuo",
+    "title": "O Destino é do Vento",
+    "roles": ["Mid", "Baron"],
+    "tier": null,
+    "image": "/assets/images/champions/yasuo.webp",
+    "stats": {
+      "winRate": null,
+      "pickRate": null,
+      "banRate": null
+    },
+    "build": {
+      "items": [],
+      "boots": [],
+      "runes": [],
+      "spells": []
+    },
+    "skillOrder": [],
+    "counters": [],
+    "strongAgainst": [],
+    "synergies": [],
+    "sources": [],
+    "patch": null,
+    "updatedAt": null,
+    "_note": "Dados demonstrativos. Estatísticas não refletem dados reais."
+  },
+  {
+    "id": 3,
+    "name": "Jinx",
+    "slug": "jinx",
+    "title": "A Anarquista",
+    "roles": ["Duo"],
+    "tier": null,
+    "image": "/assets/images/champions/jinx.webp",
+    "stats": {
+      "winRate": null,
+      "pickRate": null,
+      "banRate": null
+    },
+    "build": {
+      "items": [],
+      "boots": [],
+      "runes": [],
+      "spells": []
+    },
+    "skillOrder": [],
+    "counters": [],
+    "strongAgainst": [],
+    "synergies": [],
+    "sources": [],
+    "patch": null,
+    "updatedAt": null,
+    "_note": "Dados demonstrativos. Estatísticas não refletem dados reais."
+  },
+  {
+    "id": 4,
+    "name": "Lee Sin",
+    "slug": "lee-sin",
+    "title": "O Monge Cego",
+    "roles": ["Jungle"],
+    "tier": null,
+    "image": "/assets/images/champions/lee-sin.webp",
+    "stats": {
+      "winRate": null,
+      "pickRate": null,
+      "banRate": null
+    },
+    "build": {
+      "items": [],
+      "boots": [],
+      "runes": [],
+      "spells": []
+    },
+    "skillOrder": [],
+    "counters": [],
+    "strongAgainst": [],
+    "synergies": [],
+    "sources": [],
+    "patch": null,
+    "updatedAt": null,
+    "_note": "Dados demonstrativos. Estatísticas não refletem dados reais."
+  },
+  {
+    "id": 5,
+    "name": "Lux",
+    "slug": "lux",
+    "title": "A Dama Luminosa",
+    "roles": ["Mid", "Support"],
+    "tier": null,
+    "image": "/assets/images/champions/lux.webp",
+    "stats": {
+      "winRate": null,
+      "pickRate": null,
+      "banRate": null
+    },
+    "build": {
+      "items": [],
+      "boots": [],
+      "runes": [],
+      "spells": []
+    },
+    "skillOrder": [],
+    "counters": [],
+    "strongAgainst": [],
+    "synergies": [],
+    "sources": [],
+    "patch": null,
+    "updatedAt": null,
+    "_note": "Dados demonstrativos. Estatísticas não refletem dados reais."
+  },
+  {
+    "id": 6,
+    "name": "Garen",
+    "slug": "garen",
+    "title": "A Força da Justiça",
+    "roles": ["Baron"],
+    "tier": null,
+    "image": "/assets/images/champions/garen.webp",
+    "stats": {
+      "winRate": null,
+      "pickRate": null,
+      "banRate": null
+    },
+    "build": {
+      "items": [],
+      "boots": [],
+      "runes": [],
+      "spells": []
+    },
+    "skillOrder": [],
+    "counters": [],
+    "strongAgainst": [],
+    "synergies": [],
+    "sources": [],
+    "patch": null,
+    "updatedAt": null,
+    "_note": "Dados demonstrativos. Estatísticas não refletem dados reais."
+  },
+  {
+    "id": 7,
+    "name": "Vi",
+    "slug": "vi",
+    "title": "A Fiscal de Piltover",
+    "roles": ["Jungle"],
+    "tier": null,
+    "image": "/assets/images/champions/vi.webp",
+    "stats": {
+      "winRate": null,
+      "pickRate": null,
+      "banRate": null
+    },
+    "build": {
+      "items": [],
+      "boots": [],
+      "runes": [],
+      "spells": []
+    },
+    "skillOrder": [],
+    "counters": [],
+    "strongAgainst": [],
+    "synergies": [],
+    "sources": [],
+    "patch": null,
+    "updatedAt": null,
+    "_note": "Dados demonstrativos. Estatísticas não refletem dados reais."
+  },
+  {
+    "id": 8,
+    "name": "Nautilus",
+    "slug": "nautilus",
+    "title": "O Titã das Profundezas",
+    "roles": ["Support"],
+    "tier": null,
+    "image": "/assets/images/champions/nautilus.webp",
+    "stats": {
+      "winRate": null,
+      "pickRate": null,
+      "banRate": null
+    },
+    "build": {
+      "items": [],
+      "boots": [],
+      "runes": [],
+      "spells": []
+    },
+    "skillOrder": [],
+    "counters": [],
+    "strongAgainst": [],
+    "synergies": [],
+    "sources": [],
+    "patch": null,
+    "updatedAt": null,
+    "_note": "Dados demonstrativos. Estatísticas não refletem dados reais."
+  },
+  {
+    "id": 9,
+    "name": "Kai'Sa",
+    "slug": "kaisa",
+    "title": "Filha do Vazio",
+    "roles": ["Duo"],
+    "tier": null,
+    "image": "/assets/images/champions/kaisa.webp",
+    "stats": {
+      "winRate": null,
+      "pickRate": null,
+      "banRate": null
+    },
+    "build": {
+      "items": [],
+      "boots": [],
+      "runes": [],
+      "spells": []
+    },
+    "skillOrder": [],
+    "counters": [],
+    "strongAgainst": [],
+    "synergies": [],
+    "sources": [],
+    "patch": null,
+    "updatedAt": null,
+    "_note": "Dados demonstrativos. Estatísticas não refletem dados reais."
+  },
+  {
+    "id": 10,
+    "name": "Sett",
+    "slug": "sett",
+    "title": "O Chefe",
+    "roles": ["Baron", "Support"],
+    "tier": null,
+    "image": "/assets/images/champions/sett.webp",
+    "stats": {
+      "winRate": null,
+      "pickRate": null,
+      "banRate": null
+    },
+    "build": {
+      "items": [],
+      "boots": [],
+      "runes": [],
+      "spells": []
+    },
+    "skillOrder": [],
+    "counters": [],
+    "strongAgainst": [],
+    "synergies": [],
+    "sources": [],
+    "patch": null,
+    "updatedAt": null,
+    "_note": "Dados demonstrativos. Estatísticas não refletem dados reais."
+  },
+  {
+    "id": 11,
+    "name": "Ezreal",
+    "slug": "ezreal",
+    "title": "O Explorador Pródigo",
+    "roles": ["Duo"],
+    "tier": null,
+    "image": "/assets/images/champions/ezreal.webp",
+    "stats": {
+      "winRate": null,
+      "pickRate": null,
+      "banRate": null
+    },
+    "build": {
+      "items": [],
+      "boots": [],
+      "runes": [],
+      "spells": []
+    },
+    "skillOrder": [],
+    "counters": [],
+    "strongAgainst": [],
+    "synergies": [],
+    "sources": [],
+    "patch": null,
+    "updatedAt": null,
+    "_note": "Dados demonstrativos. Estatísticas não refletem dados reais."
+  },
+  {
+    "id": 12,
+    "name": "Blitzcrank",
+    "slug": "blitzcrank",
+    "title": "O Grande Golem a Vapor",
+    "roles": ["Support"],
+    "tier": null,
+    "image": "/assets/images/champions/blitzcrank.webp",
+    "stats": {
+      "winRate": null,
+      "pickRate": null,
+      "banRate": null
+    },
+    "build": {
+      "items": [],
+      "boots": [],
+      "runes": [],
+      "spells": []
+    },
+    "skillOrder": [],
+    "counters": [],
+    "strongAgainst": [],
+    "synergies": [],
+    "sources": [],
+    "patch": null,
+    "updatedAt": null,
+    "_note": "Dados demonstrativos. Estatísticas não refletem dados reais."
+  }
+]

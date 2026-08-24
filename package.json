@@ -1,0 +1,29 @@
+{
+  "name": "wild-rift-guide",
+  "version": "1.0.0",
+  "description": "Guia de League of Legends: Wild Rift — builds, counters, estatísticas e informações sobre campeões.",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "keywords": [
+    "wild-rift",
+    "league-of-legends",
+    "guia",
+    "builds",
+    "counters",
+    "estatísticas"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "wild-rift-guide": "file:"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

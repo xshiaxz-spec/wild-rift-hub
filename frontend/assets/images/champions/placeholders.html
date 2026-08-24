@@ -1,0 +1,116 @@
+<!-- Gerador de imagens SVG para campeões -->
+<!-- Abra este arquivo no navegador para baixar as imagens -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerador de Imagens de Campeões</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #1a1a1a; color: #fff; }
+        h1 { color: #0ac8b9; }
+        .status { margin: 20px 0; padding: 10px; background: #0d1d2a; border-radius: 4px; }
+        button { padding: 10px 20px; background: #0ac8b9; color: #000; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #49d6ca; }
+    </style>
+</head>
+<body>
+    <h1>🎨 Gerador de Imagens de Campeões</h1>
+    <p>Clique no botão para gerar e baixar as imagens SVG dos campeões.</p>
+    <button onclick="generateAllChampions()">Gerar e Baixar Imagens</button>
+    <div id="status" class="status">Aguardando...</div>
+
+    <script>
+        const champions = [
+            { name: "Ahri", color: "#FF6B9D", emoji: "🦊" },
+            { name: "Yasuo", color: "#B8D4E8", emoji: "🌪️" },
+            { name: "Jinx", color: "#FF6B6B", emoji: "💣" },
+            { name: "Lee Sin", color: "#FFB84D", emoji: "🥋" },
+            { name: "Lux", color: "#FFE66D", emoji: "✨" },
+            { name: "Garen", color: "#8B4513", emoji: "⚔️" },
+            { name: "Vi", color: "#FF8C42", emoji: "👊" },
+            { name: "Nautilus", color: "#4A90E2", emoji: "⚓" },
+            { name: "Kai'Sa", color: "#9B59B6", emoji: "👽" },
+            { name: "Sett", color: "#E74C3C", emoji: "💪" },
+            { name: "Ezreal", color: "#3498DB", emoji: "🏹" },
+            { name: "Blitzcrank", color: "#7F8C8D", emoji: "🤖" }
+        ];
+
+        function generateSVG(champion) {
+            const lightColor = adjustBrightness(champion.color, 20);
+            return `
+<svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-${champion.name}" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:${champion.color};stop-opacity:1" />
+      <stop offset="100%" style="stop-color:${lightColor};stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background com gradiente -->
+  <rect width="160" height="160" fill="url(#grad-${champion.name})"/>
+  
+  <!-- Padrão hexagonal -->
+  <g opacity="0.1" stroke="white" stroke-width="1" fill="none">
+    <polygon points="40,20 60,10 80,20 80,40 60,50 40,40"/>
+    <polygon points="100,80 120,70 140,80 140,100 120,110 100,100"/>
+    <polygon points="20,90 40,80 60,90 60,110 40,120 20,110"/>
+    <polygon points="90,30 110,20 130,30 130,50 110,60 90,50"/>
+  </g>
+  
+  <!-- Brilho superior -->
+  <ellipse cx="80" cy="40" rx="50" ry="30" fill="white" opacity="0.15"/>
+  
+  <!-- Emoji/ícone central -->
+  <text x="80" y="95" font-size="60" text-anchor="middle" dominant-baseline="middle">
+    ${champion.emoji}
+  </text>
+  
+  <!-- Nome -->
+  <text x="80" y="145" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">
+    ${champion.name}
+  </text>
+</svg>`;
+        }
+
+        function adjustBrightness(color, percent) {
+            const num = parseInt(color.replace("#",""), 16);
+            const amt = Math.round(2.55 * percent);
+            const R = Math.min(255, (num >> 16) + amt);
+            const G = Math.min(255, (num >> 8 & 0x00FF) + amt);
+            const B = Math.min(255, (num & 0x0000FF) + amt);
+            return "#" + (0x1000000 + R*0x10000 + G*0x100 + B).toString(16).slice(1);
+        }
+
+        function downloadSVG(svg, filename) {
+            const blob = new Blob([svg], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename + '.svg';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function generateAllChampions() {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = '⏳ Gerando imagens...';
+            
+            let delay = 0;
+            champions.forEach(champion => {
+                setTimeout(() => {
+                    const svg = generateSVG(champion);
+                    downloadSVG(svg, champion.name.toLowerCase().replace(" ", "-"));
+                    const remaining = champions.length - (champions.indexOf(champion) + 1);
+                    statusDiv.innerHTML = `✓ ${champion.name} baixado! (${remaining} faltando...)`;
+                }, delay);
+                delay += 500;
+            });
+
+            setTimeout(() => {
+                statusDiv.innerHTML = '✅ Todas as imagens foram baixadas! Coloque-as na pasta: /frontend/assets/images/champions/';
+            }, delay);
+        }
+    </script>
+</body>
+</html>

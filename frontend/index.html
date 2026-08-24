@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wild Rift Guide — Builds, counters, estatísticas e informações sobre os campeões de League of Legends: Wild Rift." />
+  <meta name="theme-color" content="#050b14" />
+
+  <title>Wild Rift Guide — Domine o Rift</title>
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+</head>
+<body>
+
+  <!-- ─── Navbar ──────────────────────────────────────────────── -->
+  <header class="navbar" role="banner">
+    <div class="navbar__inner">
+
+      <!-- Logo -->
+      <a href="/" class="navbar__logo" aria-label="Wild Rift Guide — Página inicial">
+        <div class="navbar__logo-icon" aria-hidden="true">WR</div>
+        <span>Wild Rift Guide</span>
+      </a>
+
+      <!-- Navegação desktop -->
+      <nav id="nav-menu" class="navbar__nav" aria-label="Navegação principal">
+        <a href="/" class="navbar__link active" aria-current="page">Início</a>
+        <a href="/#champions" class="navbar__link">Campeões</a>
+        <a href="#" class="navbar__link" aria-disabled="true" title="Em breve">Tier List</a>
+        <a href="#" class="navbar__link" aria-disabled="true" title="Em breve">Builds</a>
+        <a href="#" class="navbar__link" aria-disabled="true" title="Em breve">Counters</a>
+      </nav>
+
+      <!-- Botão hamburguer (mobile) -->
+      <button
+        id="nav-toggle"
+        class="navbar__toggle"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ─── Conteúdo principal ──────────────────────────────────── -->
+  <main class="page-content" id="main-content">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="hero__eyebrow">League of Legends: Wild Rift</p>
+      <h1 class="hero__title" id="hero-title">Wild Rift Guide</h1>
+      <p class="hero__subtitle">Domine o Rift.</p>
+      <p class="hero__description">
+        Builds, counters, estatísticas e informações<br />
+        sobre os campeões de Wild Rift.
+      </p>
+
+      <!-- Barra de pesquisa -->
+      <div class="search-wrapper" role="search">
+        <label for="search-input" class="sr-only">Pesquisar campeão</label>
+        <span class="search-wrapper__icon" aria-hidden="true">
+          <!-- Ícone de lupa em SVG inline — sem dependência externa -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
+        <input
+          type="search"
+          id="search-input"
+          class="search-input"
+          placeholder="Pesquisar campeão..."
+          autocomplete="off"
+          aria-label="Pesquisar campeão pelo nome"
+        />
+      </div>
+    </section>
+
+    <!-- Seção de campeões -->
+    <section class="champions-section container" id="champions" aria-labelledby="champions-title">
+
+      <!-- Cabeçalho da seção -->
+      <div class="section__header">
+        <h2 class="section__title" id="champions-title">Campeões</h2>
+        <div class="section__line" aria-hidden="true"></div>
+      </div>
+
+      <!-- Filtros de rota -->
+      <div class="role-filters" role="group" aria-label="Filtrar por rota">
+        <button class="role-filter-btn active" data-role="all" aria-pressed="true">
+          <span class="role-filter-btn__dot" aria-hidden="true"></span>
+          Todos
+        </button>
+        <button class="role-filter-btn" data-role="Baron" aria-pressed="false">
+          <span class="role-filter-btn__dot" aria-hidden="true"></span>
+          Baron
+        </button>
+        <button class="role-filter-btn" data-role="Jungle" aria-pressed="false">
+          <span class="role-filter-btn__dot" aria-hidden="true"></span>
+          Jungle
+        </button>
+        <button class="role-filter-btn" data-role="Mid" aria-pressed="false">
+          <span class="role-filter-btn__dot" aria-hidden="true"></span>
+          Mid
+        </button>
+        <button class="role-filter-btn" data-role="Duo" aria-pressed="false">
+          <span class="role-filter-btn__dot" aria-hidden="true"></span>
+          Duo
+        </button>
+        <button class="role-filter-btn" data-role="Support" aria-pressed="false">
+          <span class="role-filter-btn__dot" aria-hidden="true"></span>
+          Support
+        </button>
+      </div>
+
+      <!-- Contador de resultados -->
+      <p id="champions-count" class="champions-count" aria-live="polite" aria-atomic="true"></p>
+
+      <!-- Grid de campeões — preenchido pelo home.js -->
+      <div
+        id="champions-grid"
+        class="champions-grid"
+        role="list"
+        aria-label="Lista de campeões"
+        aria-live="polite"
+      ></div>
+
+    </section>
+
+  </main>
+
+  <!-- ─── Rodapé ───────────────────────────────────────────────── -->
+  <footer style="border-top: 1px solid var(--border); padding: var(--space-xl) 0; margin-top: var(--space-2xl);">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md);">
+      <p style="font-size: 0.8rem; color: var(--text-muted);">
+        Wild Rift Guide &mdash; Projeto em desenvolvimento
+      </p>
+      <p style="font-size: 0.75rem; color: var(--text-muted); text-align: right;">
+        Dados demonstrativos. Não afiliado à Riot Games.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ─── Scripts ──────────────────────────────────────────────── -->
+  <!--
+    api.js deve ser carregado antes de home.js,
+    pois home.js utiliza as funções definidas em api.js.
+  -->
+  <script src="/js/api.js"></script>
+  <script src="/js/home.js"></script>
+
+  <!-- Estilo utilitário para acessibilidade: esconde visualmente mas mantém para leitores de tela -->
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+</body>
+</html>

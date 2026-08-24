@@ -1,0 +1,342 @@
+/* ============================================================
+   WILD RIFT GUIDE — champion.css
+   Estilos exclusivos da página individual do campeão (champion.html).
+   ============================================================ */
+
+/* ─── Header do Campeão ─────────────────────────────────────── */
+
+.champion-header {
+  position: relative;
+  padding: var(--space-2xl) 0 var(--space-xl);
+  overflow: hidden;
+}
+
+/* Glow de fundo decorativo */
+.champion-header::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(10, 200, 185, 0.05) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.champion-header__inner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2xl);
+}
+
+/* Imagem / Avatar */
+.champion-header__avatar-wrapper {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.champion-header__avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  border: 2px solid var(--border-light);
+  background: var(--bg-secondary);
+  transition: border-color var(--transition-base);
+}
+
+.champion-header__avatar-wrapper:hover .champion-header__avatar {
+  border-color: var(--border-gold);
+}
+
+.champion-header__avatar-placeholder {
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--border-light);
+}
+
+/* Tier badge no canto do avatar */
+.champion-header__avatar-tier {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+/* Info textual */
+.champion-header__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.champion-header__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-md);
+  transition: color var(--transition-fast);
+  text-transform: uppercase;
+}
+
+.champion-header__back:hover {
+  color: var(--blue-light);
+}
+
+.champion-header__back-arrow {
+  font-size: 0.9rem;
+  transition: transform var(--transition-fast);
+}
+
+.champion-header__back:hover .champion-header__back-arrow {
+  transform: translateX(-3px);
+}
+
+.champion-header__name {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 4px;
+  line-height: 1.1;
+}
+
+.champion-header__title-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: var(--space-md);
+}
+
+.champion-header__badges {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+/* Separador decorativo abaixo do header */
+.champion-header__divider {
+  margin-top: var(--space-xl);
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, var(--border-gold), var(--border), transparent);
+}
+
+/* ─── Corpo da Página ───────────────────────────────────────── */
+
+.champion-body {
+  padding-bottom: var(--space-3xl);
+}
+
+/* ─── Cards de Seção ────────────────────────────────────────── */
+
+/* Layout de duas colunas para stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: border-color var(--transition-fast);
+}
+
+.stat-card:hover {
+  border-color: var(--border-light);
+}
+
+.stat-card__label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.stat-card__value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.stat-card__value.stat-card__value--empty {
+  color: var(--text-muted);
+  font-size: 1.3rem;
+}
+
+.stat-card__sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ─── Seção de Informações ──────────────────────────────────── */
+
+.info-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+.info-section__title {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.info-section__icon {
+  opacity: 0.8;
+}
+
+/* Estado "dados indisponíveis" dentro das seções */
+.unavailable {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  padding: var(--space-sm) 0;
+}
+
+.unavailable__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border-light);
+  flex-shrink: 0;
+}
+
+/* ─── Fontes de Dados ───────────────────────────────────────── */
+
+.sources-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.source-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.source-item__name {
+  font-weight: 700;
+  color: var(--text);
+  min-width: 120px;
+}
+
+.source-item__value {
+  color: var(--blue-light);
+  font-weight: 600;
+}
+
+/* ─── Patch Info ────────────────────────────────────────────── */
+
+.patch-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 4px 10px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ─── Responsividade ────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .champion-header__inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-lg);
+  }
+
+  .champion-header__back {
+    justify-content: center;
+  }
+
+  .champion-header__badges {
+    justify-content: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .stat-card {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .stat-card__value {
+    font-size: 1.3rem;
+  }
+
+  .info-section {
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .champion-header__avatar,
+  .champion-header__avatar-placeholder {
+    width: 110px;
+    height: 110px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .stat-card__value {
+    font-size: 1.1rem;
+  }
+}

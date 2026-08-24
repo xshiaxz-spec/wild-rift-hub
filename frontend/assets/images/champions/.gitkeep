@@ -1,0 +1,3 @@
+# Pasta reservada para imagens dos campeões.
+# Exemplo de uso: ahri.webp, yasuo.webp, lee-sin.webp
+# O backend espera o caminho: /assets/images/champions/<slug>.webp

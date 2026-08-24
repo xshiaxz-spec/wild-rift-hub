@@ -1,0 +1,523 @@
+/* ============================================================
+   WILD RIFT GUIDE — global.css
+   Contém: reset, variáveis CSS, tipografia, layout base,
+           componentes reutilizáveis e utilitários.
+   ============================================================ */
+
+/* ─── 1. Reset & Box Model ─────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ─── 2. Variáveis CSS ─────────────────────────────────────── */
+
+:root {
+  /* Fundos */
+  --bg:               #050b14;
+  --bg-secondary:     #081421;
+  --bg-card:          #0d1d2a;
+  --bg-card-hover:    #12283a;
+  --bg-overlay:       rgba(5, 11, 20, 0.85);
+
+  /* Dourado */
+  --gold:             #c89b3c;
+  --gold-light:       #e4bd67;
+  --gold-dim:         rgba(200, 155, 60, 0.15);
+
+  /* Azul ciano */
+  --blue:             #0ac8b9;
+  --blue-light:       #49d6ca;
+  --blue-dim:         rgba(10, 200, 185, 0.12);
+
+  /* Texto */
+  --text:             #f0f0f0;
+  --text-secondary:   #a7b0bd;
+  --text-muted:       #5a6a7a;
+
+  /* Bordas */
+  --border:           #1c3549;
+  --border-light:     #244055;
+  --border-gold:      rgba(200, 155, 60, 0.4);
+
+  /* Tier badges */
+  --tier-s:           #f0c060;
+  --tier-a:           #7ec8e3;
+  --tier-b:           #8ecf85;
+  --tier-c:           #b0b0b0;
+  --tier-d:           #c07070;
+
+  /* Estado */
+  --error:            #e05252;
+  --success:          #52c078;
+
+  /* Espaçamento */
+  --space-xs:         0.25rem;
+  --space-sm:         0.5rem;
+  --space-md:         1rem;
+  --space-lg:         1.5rem;
+  --space-xl:         2rem;
+  --space-2xl:        3rem;
+  --space-3xl:        4rem;
+
+  /* Bordas arredondadas */
+  --radius-sm:        4px;
+  --radius-md:        8px;
+  --radius-lg:        12px;
+  --radius-xl:        16px;
+
+  /* Sombras */
+  --shadow-card:      0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover:0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-gold:      0 0 16px rgba(200, 155, 60, 0.25);
+
+  /* Transições */
+  --transition-fast:  0.15s ease;
+  --transition-base:  0.25s ease;
+  --transition-slow:  0.4s ease;
+
+  /* Layout */
+  --max-width:        1280px;
+  --navbar-height:    64px;
+}
+
+/* ─── 3. Tipografia ────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text);
+}
+
+h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+h2 { font-size: clamp(1.3rem, 3vw, 1.8rem); }
+h3 { font-size: clamp(1rem, 2vw, 1.25rem); }
+
+p {
+  color: var(--text-secondary);
+}
+
+/* ─── 4. Layout Base ────────────────────────────────────────── */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.page-content {
+  padding-top: calc(var(--navbar-height) + var(--space-xl));
+  padding-bottom: var(--space-3xl);
+  min-height: 100vh;
+}
+
+/* ─── 5. Navbar ─────────────────────────────────────────────── */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  background: rgba(5, 11, 20, 0.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+}
+
+.navbar__logo:hover {
+  color: var(--gold-light);
+}
+
+.navbar__logo-icon {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: var(--bg);
+  flex-shrink: 0;
+}
+
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.navbar__link {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  transition: color var(--transition-fast), background var(--transition-fast);
+  position: relative;
+}
+
+.navbar__link:hover {
+  color: var(--text);
+  background: var(--blue-dim);
+}
+
+.navbar__link.active {
+  color: var(--blue-light);
+}
+
+.navbar__link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: var(--space-md);
+  right: var(--space-md);
+  height: 2px;
+  background: var(--blue);
+  border-radius: 2px 2px 0 0;
+}
+
+/* Botão hamburguer — apenas mobile */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.navbar__toggle:hover {
+  background: var(--bg-card);
+}
+
+.navbar__toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-secondary);
+  border-radius: 2px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+/* Estado aberto do menu mobile */
+.navbar__toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar__toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar__toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─── 6. Role Badge ─────────────────────────────────────────── */
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--blue-dim);
+  color: var(--blue-light);
+  border: 1px solid rgba(10, 200, 185, 0.2);
+}
+
+/* ─── 7. Tier Badge ─────────────────────────────────────────── */
+
+.tier-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tier-badge--s { background: rgba(240, 192, 96, 0.15); color: var(--tier-s); border: 1px solid rgba(240, 192, 96, 0.3); }
+.tier-badge--a { background: rgba(126, 200, 227, 0.15); color: var(--tier-a); border: 1px solid rgba(126, 200, 227, 0.3); }
+.tier-badge--b { background: rgba(142, 207, 133, 0.15); color: var(--tier-b); border: 1px solid rgba(142, 207, 133, 0.3); }
+.tier-badge--c { background: rgba(176, 176, 176, 0.15); color: var(--tier-c); border: 1px solid rgba(176, 176, 176, 0.3); }
+.tier-badge--d { background: rgba(192, 112, 112, 0.15); color: var(--tier-d); border: 1px solid rgba(192, 112, 112, 0.3); }
+.tier-badge--none { background: rgba(90, 106, 122, 0.15); color: var(--text-muted); border: 1px solid rgba(90, 106, 122, 0.3); }
+
+/* ─── 8. Seção genérica ─────────────────────────────────────── */
+
+.section {
+  padding: var(--space-2xl) 0;
+}
+
+.section__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.section__title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.section__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--border-gold), transparent);
+}
+
+/* ─── 9. Loading ────────────────────────────────────────────── */
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-3xl) var(--space-lg);
+  color: var(--text-secondary);
+}
+
+.loading-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-state p {
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ─── 10. Estados: Erro e Vazio ─────────────────────────────── */
+
+.error-state,
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-3xl) var(--space-lg);
+  text-align: center;
+}
+
+.error-state__icon,
+.empty-state__icon {
+  font-size: 2.5rem;
+  opacity: 0.5;
+}
+
+.error-state__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--error);
+}
+
+.error-state__message,
+.empty-state__message {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  max-width: 360px;
+}
+
+.empty-state__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+/* ─── 11. Botão padrão ──────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: background var(--transition-fast), color var(--transition-fast),
+              border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn--primary {
+  background: var(--blue-dim);
+  color: var(--blue-light);
+  border: 1px solid rgba(10, 200, 185, 0.3);
+}
+
+.btn--primary:hover {
+  background: rgba(10, 200, 185, 0.2);
+  border-color: var(--blue);
+  box-shadow: 0 0 12px rgba(10, 200, 185, 0.2);
+}
+
+.btn--gold {
+  background: var(--gold-dim);
+  color: var(--gold-light);
+  border: 1px solid var(--border-gold);
+}
+
+.btn--gold:hover {
+  background: rgba(200, 155, 60, 0.25);
+  box-shadow: var(--shadow-gold);
+}
+
+/* ─── 12. Divider ───────────────────────────────────────────── */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: var(--space-xl) 0;
+}
+
+/* ─── 13. Fade-in Animation ─────────────────────────────────── */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-slow) both;
+}
+
+/* ─── 14. Responsividade base ───────────────────────────────── */
+
+@media (max-width: 768px) {
+  .navbar__nav {
+    display: none;
+    position: absolute;
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    background: rgba(5, 11, 20, 0.98);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: var(--space-md);
+    gap: var(--space-xs);
+  }
+
+  .navbar__nav.open {
+    display: flex;
+  }
+
+  .navbar__link {
+    width: 100%;
+    text-align: left;
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .container {
+    padding: 0 var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --space-lg: 1rem;
+    --space-xl: 1.5rem;
+    --space-2xl: 2rem;
+    --space-3xl: 3rem;
+  }
+}
